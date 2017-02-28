@@ -6,14 +6,26 @@
 package modo_grafico_formulario;
 
 import java.awt.Image;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author C.andres
  */
 public class Formulario2 extends javax.swing.JFrame {
+    public static DefaultTableModel modelo = new DefaultTableModel();
+    //filas
+    Object[] filas;
 
     /**
      * Creates new form Registro
@@ -21,8 +33,8 @@ public class Formulario2 extends javax.swing.JFrame {
     public Formulario2() {
         initComponents();
         ImageIcon fondo = new ImageIcon("src/rrr.jpg");
-        Icon icono = new ImageIcon(fondo.getImage().getScaledInstance(lblfondo3.getWidth(), lblfondo3.getHeight(), Image.SCALE_DEFAULT));
-        lblfondo3.setIcon(icono);
+        Icon icono = new ImageIcon(fondo.getImage().getScaledInstance(jtResultado.getWidth(), jtResultado.getHeight(), Image.SCALE_DEFAULT));
+        jtResultado.setIcon(icono);
         this.repaint();
     }
 
@@ -68,7 +80,8 @@ public class Formulario2 extends javax.swing.JFrame {
         Boton_verde = new javax.swing.JButton();
         Boton_amarillo = new javax.swing.JButton();
         Boton_rojo = new javax.swing.JButton();
-        lblfondo3 = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JButton();
+        jtResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Datos Ingresados");
@@ -109,10 +122,15 @@ public class Formulario2 extends javax.swing.JFrame {
         jLabel9.setText("Numero de documento:");
 
         primernombre.setEditable(false);
-        primernombre.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        primernombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        primernombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                primernombreActionPerformed(evt);
+            }
+        });
 
         segundonombre.setEditable(false);
-        segundonombre.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        segundonombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         segundonombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 segundonombreActionPerformed(evt);
@@ -120,7 +138,7 @@ public class Formulario2 extends javax.swing.JFrame {
         });
 
         primerapellido.setEditable(false);
-        primerapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        primerapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         primerapellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 primerapellidoActionPerformed(evt);
@@ -128,13 +146,13 @@ public class Formulario2 extends javax.swing.JFrame {
         });
 
         segundoapellido.setEditable(false);
-        segundoapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        segundoapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         telefono.setEditable(false);
-        telefono.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        telefono.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         direccion.setEditable(false);
-        direccion.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        direccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         direccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 direccionActionPerformed(evt);
@@ -142,10 +160,15 @@ public class Formulario2 extends javax.swing.JFrame {
         });
 
         estado.setEditable(false);
-        estado.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        estado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         email.setEditable(false);
-        email.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        email.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
@@ -165,22 +188,22 @@ public class Formulario2 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(cuadrotexto);
 
         genero.setEditable(false);
-        genero.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        genero.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         tipodocumento.setEditable(false);
-        tipodocumento.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        tipodocumento.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         hobbie1.setEditable(false);
-        hobbie1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        hobbie1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         hobbie3.setEditable(false);
-        hobbie3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        hobbie3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         hobbie2.setEditable(false);
-        hobbie2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        hobbie2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         hobbie4.setEditable(false);
-        hobbie4.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        hobbie4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -328,7 +351,17 @@ public class Formulario2 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Boton_rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 780, -1, -1));
-        getContentPane().add(lblfondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 840));
+
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/worker (1).png"))); // NOI18N
+        btnBuscar.setText("Consultar Registros");
+        btnBuscar.setToolTipText("");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 840, -1, -1));
+        getContentPane().add(jtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -80, 510, 980));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -346,12 +379,32 @@ public class Formulario2 extends javax.swing.JFrame {
     }//GEN-LAST:event_direccionActionPerformed
 
     private void Boton_verdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_verdeActionPerformed
-        // TODO add your handling code here:
+        Insertar();
+       
     }//GEN-LAST:event_Boton_verdeActionPerformed
 
     private void Boton_rojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_rojoActionPerformed
         System.exit(0);
     }//GEN-LAST:event_Boton_rojoActionPerformed
+
+    private void primernombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primernombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_primernombreActionPerformed
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+      
+          Formulario3 fdr1 = new Formulario3();
+          fdr1.setVisible(true);
+          fdr1.setLocationRelativeTo(null);
+        
+        
+          
+        
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -388,11 +441,56 @@ public class Formulario2 extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    
+   
+public void Insertar() {
+     conectar con= new conectar();
+        Connection reg=con.conexion();
+        
+        String nom,nom2,ape,ape2,dir,tel,mail,tipodoc,ndoc,gen;
+      
+        String sql;
+        
+        nom=primernombre.getText();
+        nom2=segundonombre.getText();
+        ape=primerapellido.getText();
+        ape2=segundoapellido.getText();
+        dir=direccion.getText();
+        tel=telefono.getText();
+        mail=email.getText();
+        tipodoc =tipodocumento.getText();
+        ndoc=estado.getText();
+        int y = Integer.parseInt(tel); //convertir a INT
+        int x = Integer.parseInt(ndoc); //convertir a INT
+        gen=genero.getText();
+        
+        sql="INSERT INTO cliente (cli_nombre,cli_nombre2,cli_apellido,cli_apellido2,cli_direccion,cli_telefono,cli_email,cli_tipodoc,cli_estado,cli_genero)VALUES(?,?,?,?,?,?,?,?,?,?)";
+        try{
+            PreparedStatement pst=reg.prepareStatement(sql);
+            pst.setString(1, nom);
+            pst.setString(2, nom2);
+            pst.setString(3, ape);
+            pst.setString(4, ape2);
+            pst.setString(5, dir);
+            pst.setInt(6, y);
+            pst.setString(7, mail);
+            pst.setString(8,tipodoc);
+            pst.setInt(9, x);
+            pst.setString(10, gen);
+            int n= pst.executeUpdate();
+            if(n>0){
+                JOptionPane.showMessageDialog( null, "Registrado con exito");
+            }
+        } catch(SQLException ex){
+            Logger.getLogger(Formulario2.class.getName()).log(Level.SEVERE,null,ex);
+        }
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Boton_amarillo;
     private javax.swing.JButton Boton_rojo;
     private javax.swing.JButton Boton_verde;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JTextArea cuadrotexto;
     public javax.swing.JTextField direccion;
@@ -417,7 +515,7 @@ public class Formulario2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblfondo3;
+    public javax.swing.JLabel jtResultado;
     public javax.swing.JTextField primerapellido;
     public javax.swing.JTextField primernombre;
     public javax.swing.JTextField segundoapellido;

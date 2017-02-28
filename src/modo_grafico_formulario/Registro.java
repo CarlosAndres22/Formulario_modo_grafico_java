@@ -74,7 +74,7 @@ public class Registro extends javax.swing.JFrame {
         txt_Dir = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txt_email = new javax.swing.JTextField();
-        tdoc = new javax.swing.JComboBox<>();
+        tdoc = new javax.swing.JComboBox<String>();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         txt_doc = new javax.swing.JTextField();
@@ -126,14 +126,14 @@ public class Registro extends javax.swing.JFrame {
         jLabel1.setText("DATOS A INGRESAR");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
-        txt_Nom.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        txt_Nom.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(txt_Nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 191, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel2.setText("Segundo nombre:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
-        txt_Nom2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        txt_Nom2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txt_Nom2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_Nom2ActionPerformed(evt);
@@ -145,7 +145,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setText("Primer apellido:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
 
-        txt_Apll.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        txt_Apll.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txt_Apll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_ApllActionPerformed(evt);
@@ -157,28 +157,28 @@ public class Registro extends javax.swing.JFrame {
         jLabel4.setText("Segundo apellido:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
 
-        txt_Apll2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        txt_Apll2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(txt_Apll2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 192, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel5.setText("Numero de telefono:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
 
-        txt_tel.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        txt_tel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(txt_tel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 192, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel6.setText("Direccion:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, -1, -1));
 
-        txt_Dir.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        txt_Dir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(txt_Dir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 192, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel7.setText("Email:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        txt_email.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        txt_email.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txt_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_emailActionPerformed(evt);
@@ -186,7 +186,7 @@ public class Registro extends javax.swing.JFrame {
         });
         getContentPane().add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 192, -1));
 
-        tdoc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C.C.", "T.I.", "C.E." }));
+        tdoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "C.C.", "T.I.", "C.E." }));
         tdoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tdocActionPerformed(evt);
@@ -195,14 +195,14 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().add(tdoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 63, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
-        jLabel8.setText("Tipo de documento");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
+        jLabel8.setText("Tipo de documento:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 180, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel9.setText("Numero de documento:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
-        txt_doc.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        txt_doc.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(txt_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 121, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
@@ -339,8 +339,8 @@ public class Registro extends javax.swing.JFrame {
             ValidaText(txt_Apll);
             ValidaText(txt_doc);
             ValidaGen(buttonGroup1);
-            ValidaHobbie(checkLectura);
-            ValidaHobbie(checkDepor);
+            ValidaHobbie(checkLectura );
+            ValidaHobbie(checkDepor );
             ValidaHobbie(checkMusica);
             ValidaHobbie(checkOtro);
             
