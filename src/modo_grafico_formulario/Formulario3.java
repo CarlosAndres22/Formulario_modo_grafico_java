@@ -19,6 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static modo_grafico_formulario.Formulario2.modelo;
+import java.awt.event.*;
 
 /**
  *
@@ -49,13 +50,38 @@ Connection conn = null;
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        PrimerNombre = new javax.swing.JTextField();
+        SegundoNombre = new javax.swing.JTextField();
+        PrimerApellido = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
-        Boton_amarillo = new javax.swing.JButton();
-        Boton_verde = new javax.swing.JButton();
-        Boton_rojo = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        SegundoApellido = new javax.swing.JTextField();
+        Direccion = new javax.swing.JTextField();
+        Telefono = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
+        TipoDocumento = new javax.swing.JTextField();
+        NumeroDocumento = new javax.swing.JTextField();
+        Genero = new javax.swing.JTextField();
+        Id = new javax.swing.JTextField();
         jtfUsuario = new javax.swing.JTextField();
+        Boton_verde = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        Boton_rojo = new javax.swing.JButton();
+        Boton_amarillo = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         lblfondo3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,31 +89,130 @@ Connection conn = null;
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Primer Nombre");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, -1, -1));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Segundo Nombre");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Primer Apellido");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 480, -1, -1));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Segundo Apellido");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Direccion");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, -1, -1));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Telefono");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 480, -1, -1));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Email");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 480, -1, -1));
+
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Tipo Documento");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 480, -1, -1));
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Genero");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 480, -1, -1));
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("ID");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("# Documento");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 480, -1, -1));
+        getContentPane().add(PrimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 100, -1));
+        getContentPane().add(SegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 100, -1));
+
+        PrimerApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrimerApellidoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(PrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 90, -1));
+
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Encontrados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setOpaque(false);
 
         tabla.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Primer Nombre", "Segundo nombre", "Primer Apellido", "Segundo Apellido", "Direccion", "Telefono", "email", "Tipo de documento", "Numero de documento", "Genero"
+                "Id", "Primer Nombre", "Segundo nombre", "Primer Apellido", "Segundo Apellido", "Direccion", "Telefonox", "email", "Tipo de documento", "Numero de documento", "Genero"
             }
         ));
         tabla.setOpaque(false);
-        jScrollPane2.setViewportView(tabla);
-
-        Boton_amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siguiente.png"))); // NOI18N
-        Boton_amarillo.setText("Eliminar Registro");
-        Boton_amarillo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Boton_amarilloActionPerformed(evt);
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
             }
         });
+        jScrollPane2.setViewportView(tabla);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 59, 1240, 320));
+
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eraser.png"))); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 540, -1, -1));
+        getContentPane().add(SegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 510, 100, -1));
+        getContentPane().add(Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 510, 90, -1));
+        getContentPane().add(Telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 510, 70, -1));
+        getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 510, 80, -1));
+        getContentPane().add(TipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 510, 100, -1));
+        getContentPane().add(NumeroDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 510, 90, -1));
+        getContentPane().add(Genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 510, 70, -1));
+
+        Id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 70, -1));
+        getContentPane().add(jtfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 402, 140, 30));
 
         Boton_verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ace.png"))); // NOI18N
         Boton_verde.setText("Realizar Consulta");
@@ -96,6 +221,16 @@ Connection conn = null;
                 Boton_verdeActionPerformed(evt);
             }
         });
+        getContentPane().add(Boton_verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
+
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edit.png"))); // NOI18N
+        btnEditar.setText("Editar Registro");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 400, -1, -1));
 
         Boton_rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/can.png"))); // NOI18N
         Boton_rojo.setText("Salir");
@@ -104,42 +239,24 @@ Connection conn = null;
                 Boton_rojoActionPerformed(evt);
             }
         });
+        getContentPane().add(Boton_rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 400, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1056, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(Boton_verde)
-                .addGap(18, 18, 18)
-                .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Boton_amarillo)
-                .addGap(124, 124, 124)
-                .addComponent(Boton_rojo)
-                .addGap(169, 169, 169))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Boton_rojo)
-                    .addComponent(Boton_amarillo)
-                    .addComponent(Boton_verde)
-                    .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        Boton_amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siguiente.png"))); // NOI18N
+        Boton_amarillo.setText("Eliminar Registro");
+        Boton_amarillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton_amarilloActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton_amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 59, 1100, 390));
-        getContentPane().add(lblfondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 480));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Campos a Editar:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
+
+        lblfondo3.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(lblfondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,13 +271,52 @@ Connection conn = null;
     }//GEN-LAST:event_Boton_rojoActionPerformed
 
     private void Boton_amarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_amarilloActionPerformed
+    try {
         Delete();
+       
+    } catch (SQLException ex) {
+        Logger.getLogger(Formulario3.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_Boton_amarilloActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+  
+       Editar();
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void IdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IdActionPerformed
+
+    private void PrimerApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimerApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PrimerApellidoActionPerformed
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+   
+        
+        DefaultTableModel modelo = (DefaultTableModel)tabla.getModel();
+        int selectedRowIndex = tabla.getSelectedRow();
+        
+        Id.setText(modelo.getValueAt(selectedRowIndex, 0).toString());
+        PrimerNombre.setText(modelo.getValueAt(selectedRowIndex, 1).toString());
+        SegundoNombre.setText(modelo.getValueAt(selectedRowIndex, 2).toString());
+        PrimerApellido.setText(modelo.getValueAt(selectedRowIndex, 3).toString());
+        SegundoApellido.setText(modelo.getValueAt(selectedRowIndex, 4).toString());
+        Direccion.setText(modelo.getValueAt(selectedRowIndex, 5).toString());
+        Telefono.setText(modelo.getValueAt(selectedRowIndex, 6).toString());
+        Email.setText(modelo.getValueAt(selectedRowIndex, 7).toString());
+        TipoDocumento.setText(modelo.getValueAt(selectedRowIndex, 8).toString());
+        NumeroDocumento.setText(modelo.getValueAt(selectedRowIndex, 9).toString());
+        Genero.setText(modelo.getValueAt(selectedRowIndex, 10).toString());
+        
+    }//GEN-LAST:event_tablaMouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+      
         //Formulario3 app = new Formulario3();
        // app.Delete(cli_nombre);
         
@@ -194,6 +350,7 @@ Connection conn = null;
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Formulario3().setVisible(true);
+                
             }
         });
     }
@@ -203,30 +360,10 @@ Connection conn = null;
     
     
     
-   /* public void Delete(String cli_nombre ){
-     conectar con= new conectar();
-        Connection reg=con.conexion();
-        String sql = "DELETE FROM cliente WHERE cli_nombre like '%"+jtfUsuario.getText()+"%'";
-        try{
-        PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, cli_nombre);
-         pstmt.executeUpdate();
-          
-        JOptionPane.showMessageDialog(null, "Estos son los datos encontrados.");
-       //error de lectura a los campos de la bd
-            
-      
-      } catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Error sql no se pueden leer datos");
-          //error desconocido //por lo general no hay conexion con la base de datos
-        }
-      
-      
-       
-    }*/
+   
      
     
-     void Delete(){
+     void Delete() throws SQLException{
         conectar con= new conectar();
         Connection reg=con.conexion();
          String Consulta = ("Delete from cliente where cli_nombre like '%"+jtfUsuario.getText()+"%'");
@@ -241,13 +378,62 @@ Connection conn = null;
         }
         
     }
-    
-    
+     
+     void Editar(){
+          try{
+             conectar con= new conectar();
+        Connection reg=con.conexion();
+       String value1=Id.getText();
+       String value2=PrimerNombre.getText();
+       String value3=SegundoNombre.getText();
+       String value4=PrimerApellido.getText();
+       String value5=SegundoApellido.getText();
+       String value6=Direccion.getText();
+       String value7=Telefono.getText();
+       String value8=Email.getText();
+       String value9=TipoDocumento.getText();
+       String value10=NumeroDocumento.getText();
+       String value11=Genero.getText();
+      
+       String sql="update cliente set id ='"+value1+"', cli_nombre ='"+value2+"',cli_nombre2 ='"+value3+"',cli_apellido ='"+value4+"',cli_apellido2 ='"+value5+"',cli_direccion ='"+value6+"',cli_telefono ='"+value7+"',cli_email ='"+value8+"',cli_tipodoc ='"+value9+"',cli_estado ='"+value10+"',cli_genero ='"+value11+"' where id ='"+value1+"'";
+        PreparedStatement pst = reg.prepareStatement(sql);
+        pst.execute();
+        JOptionPane.showMessageDialog(null, "Registro actualizado");
+        
+        
+        }catch(Exception e){
+      JOptionPane.showMessageDialog(null, e);
+         }
+     }
+     
+     
+    /*private void GrillaMouseClicked(java.awt.event.MouseEvent evt) {                                    
+        //En este evento pasamos los datos a las cajas de texto cuando se dan click sobre ella
+        int Fila = tabla.rowAtPoint(evt.getPoint());
+        Id.setText(tabla.getValueAt(Fila, 0).toString());
+        PrimerNombre.setText(tabla.getValueAt(Fila, 1).toString());
+        SegundoNombre.setText(tabla.getValueAt(Fila, 2).toString());
+        PrimerApellido.setText(tabla.getValueAt(Fila, 3).toString());
+        SegundoApellido.setText(tabla.getValueAt(Fila, 4).toString());
+        Direccion.setText(tabla.getValueAt(Fila, 5).toString());
+        Telefono.setText(tabla.getValueAt(Fila, 6).toString());
+        Email.setText(tabla.getValueAt(Fila, 7).toString());
+        TipoDocumento.setText(tabla.getValueAt(Fila, 8).toString());
+        NumeroDocumento.setText(tabla.getValueAt(Fila, 9).toString());
+        Genero.setText(tabla.getValueAt(Fila, 10).toString());
+       
+        
+        btnEditar.setEnabled(true);
+        Boton_amarillo.setEnabled(true);
+    } 
+   
+    private void GrillaMousePressed(java.awt.event.MouseEvent evt) {                                    
+        // TODO add your handling code here:
+    }  */ 
     
     
 public void Select(){
       try{
-          
             conectar con= new conectar();
         Connection reg=con.conexion();
         JOptionPane.showMessageDialog(null, "Estos son los datos encontrados.");
@@ -260,7 +446,8 @@ public void Select(){
         ResultSet rs = consulta.executeQuery("select * from cliente where cli_nombre like '%"+jtfUsuario.getText()+"%'");
         //Reasigno un modelo en blanco:
         modelo = new DefaultTableModel();//creamos la columnas de nuestra tabla:
-                 modelo.addColumn("Primer Nombre");
+                modelo.addColumn("Id");
+        modelo.addColumn("Primer Nombre");
                  modelo.addColumn("Segundo NOmbre");
                  modelo.addColumn("Primer Apellido");
                  modelo.addColumn("Segundo Apellido");
@@ -297,11 +484,37 @@ public void Select(){
           fdr.setLocationRelativeTo(null);
         
      }
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Boton_amarillo;
     private javax.swing.JButton Boton_rojo;
     private javax.swing.JButton Boton_verde;
+    public javax.swing.JTextField Direccion;
+    public javax.swing.JTextField Email;
+    public javax.swing.JTextField Genero;
+    public javax.swing.JTextField Id;
+    public javax.swing.JTextField NumeroDocumento;
+    public javax.swing.JTextField PrimerApellido;
+    public javax.swing.JTextField PrimerNombre;
+    public javax.swing.JTextField SegundoApellido;
+    public javax.swing.JTextField SegundoNombre;
+    public javax.swing.JTextField Telefono;
+    public javax.swing.JTextField TipoDocumento;
+    private javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnLimpiar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jtfUsuario;

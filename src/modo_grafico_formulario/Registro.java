@@ -99,7 +99,7 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Boton_verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ace.png"))); // NOI18N
-        Boton_verde.setText("Aceptar");
+        Boton_verde.setText("Confirmar");
         Boton_verde.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Boton_verdeActionPerformed(evt);

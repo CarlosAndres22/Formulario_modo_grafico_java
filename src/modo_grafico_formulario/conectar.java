@@ -17,23 +17,14 @@ import javax.swing.JOptionPane;
 public class conectar {
     Connection con=null;
      
-    public Connection conexion(){
+    public Connection conexion() throws SQLException{
    
-        /*  try {
-        
-        
-        Class.forName("com.mysql.jdbc.Driver");
+    
+        try {
+        /*Class.forName("com.mysql.jdbc.Driver");
         con=DriverManager.getConnection("jdbc:mysql://localhost/db_ejemplo","root","");
         System.out.println("conexion establecida.");
-        JOptionPane.showMessageDialog( null, "Conexion establecida");
-        
-    } catch(ClassNotFoundException | SQLException e){
-        System.out.println("error de conexion");
-        JOptionPane.showMessageDialog(null, "error de conexion" + e);
-    }
-*/
-        try {
-        
+        JOptionPane.showMessageDialog( null, "Conexion establecida");*/
         String uname="root";
         String url="jdbc:mysql://localhost/db_ejemplo";
 
@@ -48,7 +39,12 @@ public class conectar {
     } catch(ClassNotFoundException | SQLException e){
         System.out.println("error de conexion");
         JOptionPane.showMessageDialog(null, "error de conexion" + e);
+        
     }
+       /* catch(ClassNotFoundException | SQLException e){
+        System.out.println("error de conexion");
+        JOptionPane.showMessageDialog(null, "error de conexion" + e);
+    }*/
     return con;
     }
 }

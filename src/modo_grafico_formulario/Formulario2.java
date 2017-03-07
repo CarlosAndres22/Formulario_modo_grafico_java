@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -23,7 +24,9 @@ import javax.swing.table.DefaultTableModel;
  * @author C.andres
  */
 public class Formulario2 extends javax.swing.JFrame {
-    public static DefaultTableModel modelo = new DefaultTableModel();
+    //borre de la linea de abajo public static
+   public static DefaultTableModel modelo = new DefaultTableModel();
+   
     //filas
     Object[] filas;
 
@@ -122,7 +125,7 @@ public class Formulario2 extends javax.swing.JFrame {
         jLabel9.setText("Numero de documento:");
 
         primernombre.setEditable(false);
-        primernombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        primernombre.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
         primernombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 primernombreActionPerformed(evt);
@@ -130,7 +133,7 @@ public class Formulario2 extends javax.swing.JFrame {
         });
 
         segundonombre.setEditable(false);
-        segundonombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        segundonombre.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
         segundonombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 segundonombreActionPerformed(evt);
@@ -138,7 +141,7 @@ public class Formulario2 extends javax.swing.JFrame {
         });
 
         primerapellido.setEditable(false);
-        primerapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        primerapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
         primerapellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 primerapellidoActionPerformed(evt);
@@ -146,13 +149,13 @@ public class Formulario2 extends javax.swing.JFrame {
         });
 
         segundoapellido.setEditable(false);
-        segundoapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        segundoapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         telefono.setEditable(false);
-        telefono.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        telefono.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         direccion.setEditable(false);
-        direccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        direccion.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
         direccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 direccionActionPerformed(evt);
@@ -160,10 +163,10 @@ public class Formulario2 extends javax.swing.JFrame {
         });
 
         estado.setEditable(false);
-        estado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        estado.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         email.setEditable(false);
-        email.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        email.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
@@ -188,46 +191,55 @@ public class Formulario2 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(cuadrotexto);
 
         genero.setEditable(false);
-        genero.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        genero.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         tipodocumento.setEditable(false);
-        tipodocumento.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tipodocumento.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         hobbie1.setEditable(false);
-        hobbie1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        hobbie1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         hobbie3.setEditable(false);
-        hobbie3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        hobbie3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         hobbie2.setEditable(false);
-        hobbie2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        hobbie2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         hobbie4.setEditable(false);
-        hobbie4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        hobbie4.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+
+        Boton_verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ace.png"))); // NOI18N
+        Boton_verde.setText("Aceptar");
+        Boton_verde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton_verdeActionPerformed(evt);
+            }
+        });
+
+        Boton_amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siguiente.png"))); // NOI18N
+        Boton_amarillo.setText("Siguiente");
+
+        Boton_rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/can.png"))); // NOI18N
+        Boton_rojo.setText("Cancelar");
+        Boton_rojo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton_rojoActionPerformed(evt);
+            }
+        });
+
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/worker (1).png"))); // NOI18N
+        btnBuscar.setText("Consultar Registros");
+        btnBuscar.setToolTipText("");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel19)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel14)
-                        .addGap(92, 92, 92)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(hobbie1, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                            .addComponent(hobbie3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hobbie4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hobbie2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(34, 34, 34))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -254,7 +266,7 @@ public class Formulario2 extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(genero, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tipodocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 39, Short.MAX_VALUE))))
+                                .addGap(0, 86, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,8 +276,38 @@ public class Formulario2 extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel19)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addGap(92, 92, 92)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(hobbie1, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                            .addComponent(hobbie3))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(hobbie4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(hobbie2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Boton_verde)
+                                .addGap(18, 18, 18)
+                                .addComponent(Boton_amarillo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Boton_rojo)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(btnBuscar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,47 +363,22 @@ public class Formulario2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hobbie3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hobbie4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(2, 2, 2)
                 .addComponent(jLabel19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Boton_verde)
+                    .addComponent(Boton_amarillo)
+                    .addComponent(Boton_rojo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBuscar)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 59, -1, 720));
-
-        Boton_verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ace.png"))); // NOI18N
-        Boton_verde.setText("Aceptar");
-        Boton_verde.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Boton_verdeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Boton_verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 780, -1, -1));
-
-        Boton_amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siguiente.png"))); // NOI18N
-        Boton_amarillo.setText("Siguiente");
-        getContentPane().add(Boton_amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 780, -1, -1));
-
-        Boton_rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/can.png"))); // NOI18N
-        Boton_rojo.setText("Cancelar");
-        Boton_rojo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Boton_rojoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Boton_rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 780, -1, -1));
-
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/worker (1).png"))); // NOI18N
-        btnBuscar.setText("Consultar Registros");
-        btnBuscar.setToolTipText("");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 840, -1, -1));
-        getContentPane().add(jtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -80, 510, 980));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 790));
+        getContentPane().add(jtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -80, 510, 930));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -379,7 +396,11 @@ public class Formulario2 extends javax.swing.JFrame {
     }//GEN-LAST:event_direccionActionPerformed
 
     private void Boton_verdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_verdeActionPerformed
-        Insertar();
+        try {
+            Insertar();
+        } catch (SQLException ex) {
+            Logger.getLogger(Formulario2.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
     }//GEN-LAST:event_Boton_verdeActionPerformed
 
@@ -444,7 +465,7 @@ public class Formulario2 extends javax.swing.JFrame {
     
     
    
-public void Insertar() {
+public void Insertar() throws SQLException {
      conectar con= new conectar();
         Connection reg=con.conexion();
         
@@ -461,8 +482,8 @@ public void Insertar() {
         mail=email.getText();
         tipodoc =tipodocumento.getText();
         ndoc=estado.getText();
-        int y = Integer.parseInt(tel); //convertir a INT
-        int x = Integer.parseInt(ndoc); //convertir a INT
+        int y = Integer.parseInt(tel); //convertir a INT telefono
+        int x = Integer.parseInt(ndoc); //convertir a INT 
         gen=genero.getText();
         
         sql="INSERT INTO cliente (cli_nombre,cli_nombre2,cli_apellido,cli_apellido2,cli_direccion,cli_telefono,cli_email,cli_tipodoc,cli_estado,cli_genero)VALUES(?,?,?,?,?,?,?,?,?,?)";
@@ -473,10 +494,10 @@ public void Insertar() {
             pst.setString(3, ape);
             pst.setString(4, ape2);
             pst.setString(5, dir);
-            pst.setInt(6, y);
+            pst.setString(6, tel);
             pst.setString(7, mail);
             pst.setString(8,tipodoc);
-            pst.setInt(9, x);
+            pst.setString(9, ndoc);
             pst.setString(10, gen);
             int n= pst.executeUpdate();
             if(n>0){
